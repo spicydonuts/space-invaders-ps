@@ -1,8 +1,7 @@
 module Handlers.Motion where
 
-import Prelude ( Ordering(..), Unit()
-               , ($), (#), (<$>), (<), (>), (+), (-), (*), (/), (||), (==), (<=)
-               , bind, compare, flip, map, negate, otherwise, return, unit )
+import Prelude ( ($), (#), (<), (>), (-), (*), (/), (||), (==), (<=)
+               , bind, map, negate, otherwise, return, unit )
 
 import Control.Monad.Eff ( Eff(), foreachE )
 import Control.Monad.ST ( ST(), STRef()

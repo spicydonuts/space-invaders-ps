@@ -1,15 +1,14 @@
 module Handlers.Destruction where
 
-import Prelude ( Unit()
-               , (#), ($), (<), (>), (+), (/=)
-               , bind, otherwise, return, unit )
+import Prelude ( (#), ($), (<), (>), (+), (-), (/=)
+               , bind, negate, otherwise, return, unit )
 
 import Control.Monad.Eff ( Eff(), foreachE )
 import Control.Monad.ST ( ST(), STRef()
                         , modifySTRef, readSTRef )
 import Data.Array ( cons, filter )
 import Data.Maybe ( Maybe(..) )
-import Optic.Core ( (^.), (.~), (+~), (%~) )
+import Optic.Core ( (^.), (.~), (%~) )
 
 import qualified Entities.Bullet as B
 import qualified Entities.Event as V

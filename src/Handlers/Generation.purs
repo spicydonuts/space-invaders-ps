@@ -1,8 +1,7 @@
 module Handlers.Generation where
 
-import Prelude ( Unit()
-               , (#), ($), (+), (-), (*), (==), (<), (>=), (&&)
-               , bind, map, mod, otherwise, return, unit )
+import Prelude ( (#), ($), (+), (-), (*), (<), (>=), (&&)
+               , bind, map, negate, otherwise, return, unit )
 
 import Control.Monad.Eff ( Eff(), foreachE )
 import Control.Monad.Eff.Random ( RANDOM(), random )
@@ -11,12 +10,9 @@ import Control.Monad.ST ( ST(), STRef()
 import Data.Array ( concat, cons )
 import Data.Date ( Now()
                  , nowEpochMilliseconds )
-import Data.Int ( fromNumber )
 import Data.Maybe ( Maybe(..) )
-import Data.Maybe.Unsafe ( fromJust )
-import Data.Time ( Milliseconds(..), Seconds(..)
-                 , toSeconds )
-import Math ( (%), floor )
+import Data.Time ( Milliseconds(..) )
+import Math ( (%) )
 import Optic.Core ( (^.), (.~), (%~) )
 
 import qualified Entities.Bullet as B

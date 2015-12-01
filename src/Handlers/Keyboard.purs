@@ -1,9 +1,9 @@
 module Handlers.Keyboard where
 
 import Prelude ( ($), (#)
-               , bind, return )
+               , bind, negate )
 
-import Control.Monad.Eff ( Eff(), Pure() )
+import Control.Monad.Eff ( Eff() )
 import Control.Monad.ST ( ST(), STRef()
                         , modifySTRef, readSTRef )
 import Data.Date ( Now() )

@@ -1,13 +1,12 @@
 module Main where
 
-import Prelude ( Unit()
-               , ($)
-               , bind, mod, return, unit )
+import Prelude ( ($)
+               , bind )
 
 import Control.Monad.Eff ( Eff() )
 import Control.Monad.Eff.Random ( RANDOM() )
 import Control.Monad.ST ( ST(), STRef()
-                        , newSTRef, readSTRef )
+                        , newSTRef )
 import Data.Date ( Now() )
 import Data.Int ( toNumber )
 import DOM ( DOM() )
@@ -15,14 +14,10 @@ import DOM.Event.EventTarget ( addEventListener )
 import DOM.Event.Types ( EventType(..) )
 import DOM.HTML ( window )
 import DOM.HTML.Types ( windowToEventTarget )
-import DOM.Node.NonElementParentNode ( getElementById )
-import DOM.Node.Types ( ElementId(..)
-                      , elementToEventTarget )
 import Data.Time ( Milliseconds(..) )
 import DOM.Timer ( Timeout(), Timer()
                  , interval, timeout )
 import Graphics.Canvas ( Canvas() )
-import Optic.Core ( (^.) )
 
 import qualified Entities.Game as G
 import qualified Handlers.Event as V
